@@ -1,0 +1,41 @@
+.cart-item-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Make the card narrower */
+}
+
+.media {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.image {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.quantity {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  width: 2rem;
+}
+
+button.is-danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
