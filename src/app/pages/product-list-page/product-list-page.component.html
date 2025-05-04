@@ -1,0 +1,8 @@
+<div class="product-list-page">
+    <h1 class="title">Product List</h1>
+    <div class="columns is-multiline">
+        <div *ngFor="let product of products" class="column is-one-third">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+    </div>
+</div>
