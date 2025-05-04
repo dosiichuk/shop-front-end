@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from '../../../../types';
 import { CommonModule } from '@angular/common';
 import { CategoryImagePipe } from '../../../pipes/category-image-pipe/category-image.pipe';
+import { CartService } from '../../../../services/cart/cart.service';
 
 @Component({
   selector: 'app-product-card',
@@ -12,6 +13,15 @@ import { CategoryImagePipe } from '../../../pipes/category-image-pipe/category-i
 })
 export class ProductCardComponent {
   @Input() product!: Product;
+
+  constructor(private cartService: CartService) {}
+
+  addToCart() {
+    this.cartService.addToCart({
+      product: this.product,
+      quantity: 1
+    });
+  }
 
 
 }

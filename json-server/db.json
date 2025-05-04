@@ -1,0 +1,99 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "john_doe",
+      "email": "john.doe@example.com",
+      "password": "password123"
+    },
+    {
+      "id": 2,
+      "username": "jane_doe",
+      "email": "jane.doe@example.com",
+      "password": "password456"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "price": 120,
+      "description": "High-quality wireless headphones with noise cancellation.",
+      "imageUrl": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Electronics",
+      "rating": 4.6
+    },
+    {
+      "id": 2,
+      "name": "Gaming Laptop",
+      "price": 1500,
+      "description": "Powerful gaming laptop with high-end graphics and performance.",
+      "imageUrl": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?q=80&w=3871&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Computers",
+      "rating": 4.8
+    },
+    {
+      "id": 3,
+      "name": "Smartphone",
+      "price": 800,
+      "description": "Latest smartphone with cutting-edge features and sleek design.",
+      "imageUrl": "https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=2118&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Mobile Phones",
+      "rating": 4.7
+    },
+    {
+      "id": 4,
+      "name": "Running Shoes",
+      "price": 100,
+      "description": "Comfortable and durable running shoes for all terrains.",
+      "imageUrl": "https://images.unsplash.com/photo-1543508282-6319a3e2621f?q=80&w=3448&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Sportswear",
+      "rating": 4.5
+    },
+    {
+      "id": 5,
+      "name": "Smartwatch",
+      "price": 250,
+      "description": "Stylish smartwatch with fitness tracking and notifications.",
+      "imageUrl": "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?q=80&w=3376&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Wearables",
+      "rating": 4.4
+    },
+    {
+      "id": 6,
+      "name": "Electric Guitar",
+      "price": 700,
+      "description": "Premium electric guitar with excellent sound quality.",
+      "imageUrl": "https://images.unsplash.com/photo-1564186763535-ebb21ef5277f?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Musical Instruments",
+      "rating": 4.9
+    },
+    {
+      "id": 7,
+      "name": "Office Chair",
+      "price": 180,
+      "description": "Ergonomic office chair with lumbar support and adjustable height.",
+      "imageUrl": "https://images.unsplash.com/photo-1612372606404-0ab33e7187ee?q=80&w=3625&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Furniture",
+      "rating": 4.3
+    },
+    {
+      "id": 8,
+      "name": "Coffee Maker",
+      "price": 90,
+      "description": "Automatic coffee maker with programmable settings.",
+      "imageUrl": "https://images.unsplash.com/photo-1608354580875-30bd4168b351?q=80&w=3987&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Appliances",
+      "rating": 4.6
+    },
+    {
+      "id": 10,
+      "name": "Mountain Bike",
+      "price": 1200,
+      "description": "High-performance mountain bike for off-road adventures.",
+      "imageUrl": "https://images.unsplash.com/photo-1624915438420-c6808f95f357?q=80&w=3252&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "category": "Outdoor",
+      "rating": 4.8
+    }
+  ]
+}

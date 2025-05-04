@@ -1,0 +1,51 @@
+<div class="signup-form-container">
+    <div class="box">
+        <h2 class="title is-4 has-text-centered">Sign Up</h2>
+        <form #signupForm="ngForm" (ngSubmit)="onSubmit(signupForm)">
+            <!-- Username Field -->
+            <div class="field">
+                <label class="label">Username</label>
+                <div class="control">
+                    <input class="input" type="text" name="username" placeholder="Enter your username"
+                        [(ngModel)]="username" #usernameInput="ngModel" required minlength="3" />
+                </div>
+                <p class="help is-danger" *ngIf="usernameInput.invalid && usernameInput.touched">
+                    Username is required and must be at least 3 characters long.
+                </p>
+            </div>
+
+            <!-- Email Field -->
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" name="email" placeholder="Enter your email" [(ngModel)]="email"
+                        #emailInput="ngModel" required email />
+                </div>
+                <p class="help is-danger" *ngIf="emailInput.invalid && emailInput.touched">
+                    Please enter a valid email address.
+                </p>
+            </div>
+
+            <!-- Password Field -->
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="input" type="password" name="password" placeholder="Enter your password"
+                        [(ngModel)]="password" #passwordInput="ngModel" required minlength="6" />
+                </div>
+                <p class="help is-danger" *ngIf="passwordInput.invalid && passwordInput.touched">
+                    Password is required and must be at least 6 characters long.
+                </p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary is-fullwidth" type="submit" [disabled]="signupForm.invalid">
+                        Sign Up
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

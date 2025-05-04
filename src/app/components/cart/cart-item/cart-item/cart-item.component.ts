@@ -1,38 +1,33 @@
 import { Component } from '@angular/core';
+import { Input } from '@angular/core';
 import { CartItem } from '../../../../types/index';
+import { CommonModule } from '@angular/common';
+import { CartService } from '../../../../services/cart/cart.service';
 
 @Component({
   selector: 'app-cart-item',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './cart-item.component.html',
   styleUrl: './cart-item.component.css'
 })
 export class CartItemComponent {
-  cartItem: CartItem = {
-    product: {
-      id: 1,
-      name: 'Sample Product',
-      price: 100,
-      category: 'Sample Category',
-      imageUrl: 'https://via.placeholder.com/150',
-      description: 'Sample product description',
-      rating: 4.5,
-    },
-    quantity: 1
-  }
+  @Input() cartItem?: CartItem;
+
+  constructor(private cartService: CartService) {}
 
   increaseQuantity() {
-    this.cartItem.quantity++;
+    if (!this.cartItem) return;
+    this.cartService.addToCart(this.cartItem);
   }
 
   decreaseQuantity() {
-    if (this.cartItem.quantity > 1) {
-      this.cartItem.quantity--;
-    }
+    if (!this.cartItem) return;
+    this.cartService.removeFromCart(this.cartItem!);
   }
 
   removeItem() {
-    console.log('Item removed from cart:', this.cartItem.product.name);
+    if (!this.cartItem) return;
+    this.cartService.removeFromCart(this.cartItem!, true);
   }
 
 }

@@ -1,1 +1,82 @@
-<p>checkout-page works!</p>
+<div class="checkout-page-container">
+    <div class="columns is-variable is-8">
+        <!-- Order Summary -->
+        <div class="column is-half">
+            <app-cart-summary [cart]="cart" [hideCheckoutButton]="true"></app-cart-summary>
+        </div>
+        <div *ngIf="cart.items.length === 0" class="empty-cart-message column is-half">
+            <h2 class="title">Your cart is empty</h2>
+            <p class="subtitle">Add some products to your cart to get started!</p>
+            <a class="button is-primary" routerLink="/shop">Continue Shopping</a>
+        </div>
+        <!-- User Details Form -->
+        <div *ngIf="cart.items.length > 0" class="column full-width">
+
+            <div class="column">
+                <div class="box">
+                    <h2 class="title is-4">Shipping Details</h2>
+                    <form #checkoutForm="ngForm" (ngSubmit)="onSubmit(checkoutForm)">
+                        <!-- Full Name -->
+                        <div class="field">
+                            <label class="label">Full Name</label>
+                            <div class="control">
+                                <input class="input" type="text" name="fullName" placeholder="Enter your full name"
+                                    [(ngModel)]="userDetails.fullName" #fullName="ngModel" required />
+                            </div>
+                            <p class="help is-danger" *ngIf="fullName.invalid && fullName.touched">
+                                Full name is required.
+                            </p>
+                        </div>
+
+                        <!-- Address -->
+                        <div class="field">
+                            <label class="label">Address</label>
+                            <div class="control">
+                                <input class="input" type="text" name="address" placeholder="Enter your address"
+                                    [(ngModel)]="userDetails.address" #address="ngModel" required />
+                            </div>
+                            <p class="help is-danger" *ngIf="address.invalid && address.touched">
+                                Address is required.
+                            </p>
+                        </div>
+
+                        <!-- City -->
+                        <div class="field">
+                            <label class="label">City</label>
+                            <div class="control">
+                                <input class="input" type="text" name="city" placeholder="Enter your city"
+                                    [(ngModel)]="userDetails.city" #city="ngModel" required />
+                            </div>
+                            <p class="help is-danger" *ngIf="city.invalid && city.touched">
+                                City is required.
+                            </p>
+                        </div>
+
+                        <!-- Postal Code -->
+                        <div class="field">
+                            <label class="label">Postal Code</label>
+                            <div class="control">
+                                <input class="input" type="text" name="postalCode" placeholder="Enter your postal code"
+                                    [(ngModel)]="userDetails.postalCode" #postalCode="ngModel" required
+                                    pattern="^[0-9]{5}$" />
+                            </div>
+                            <p class="help is-danger" *ngIf="postalCode.invalid && postalCode.touched">
+                                Postal code is required and must be 5 digits.
+                            </p>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="field">
+                            <div class="control">
+                                <button class="button is-primary is-fullwidth" type="submit"
+                                    [disabled]="checkoutForm.invalid">
+                                    Place Order
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="signin-form-container">
+    <div class="box">
+        <h2 class="title is-4 has-text-centered">Sign In</h2>
+        <form #signinForm="ngForm" (ngSubmit)="onSubmit(signinForm)">
+            <!-- Email Field -->
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" name="email" placeholder="Enter your email" [(ngModel)]="email"
+                        #emailInput="ngModel" required email />
+                </div>
+                <p class="help is-danger" *ngIf="emailInput.invalid && emailInput.touched">
+                    Please enter a valid email address.
+                </p>
+            </div>
+
+            <!-- Password Field -->
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="input" type="password" name="password" placeholder="Enter your password"
+                        [(ngModel)]="password" #passwordInput="ngModel" required minlength="6" />
+                </div>
+                <p class="help is-danger" *ngIf="passwordInput.invalid && passwordInput.touched">
+                    Password is required and must be at least 6 characters long.
+                </p>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary is-fullwidth" type="submit" [disabled]="signinForm.invalid">
+                        Sign In
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

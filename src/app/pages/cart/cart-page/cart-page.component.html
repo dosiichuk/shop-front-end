@@ -1,3 +1,15 @@
-<app-cart-item>
-</app-cart-item>
-<app-cart-summary></app-cart-summary>
+<div *ngIf="cart.items.length === 0" class="empty-cart-message">
+    <h2 class="title">Your cart is empty</h2>
+    <p class="subtitle">Add some products to your cart to get started!</p>
+    <a class="button is-primary" routerLink="/shop">Continue Shopping</a>
+</div>
+<div *ngIf="cart.items.length > 0" class="cart-items-container">
+    <h2 class="title">Your Cart</h2>
+    <div class="columns is-multiline">
+        <div *ngFor="let item of cart.items" class="column id-one-third">
+            <app-cart-item [cartItem]="item"></app-cart-item>
+        </div>
+    </div>
+</div>
+
+<app-cart-summary [cart]="cart"></app-cart-summary>
