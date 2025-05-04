@@ -4,6 +4,10 @@ import { ProductListPageComponent } from './pages/product-list-page/product-list
 export const routes: Routes = [
     {
         path: 'shop',
-        component: ProductListPageComponent
+        component: ProductListPageComponent,
+      },
+      {
+        path: 'cart',
+        loadComponent: () => import('./pages/cart/cart-page/cart-page.component').then(m => m.CartPageComponent),
       }
 ];

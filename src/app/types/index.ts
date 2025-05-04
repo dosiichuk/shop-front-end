@@ -14,3 +14,37 @@ export type ProductCategory = {
   description: string;
   imageUrl: string;
 };
+
+export type CartItem = {
+  product: Product;
+  quantity: number;
+};
+
+export type Cart = {
+  items: CartItem[];
+  userId: string;
+};
+
+export type User = {
+  id: string;
+  name: string;
+  email: string;
+  password: string;
+  cart: Cart;
+};
+
+export type Order = {
+  userId: string;
+  cart: Cart;
+  totalAmount: number;
+  orderDate: Date;
+  status: 'Pending' | 'Shipped' | 'Delivered' | 'Cancelled';
+};
+
+export type OrderDetails = {
+    order: Order;
+    shippingAddress: string;
+    paymentMethod: 'Credit Card' | 'PayPal' | 'Bank Transfer';
+    trackingNumber?: string;
+    deliveryDate?: Date;
+};
