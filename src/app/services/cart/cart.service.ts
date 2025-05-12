@@ -32,6 +32,8 @@ export class CartService {
     }
 
     this.recalculateCart();
+    alert(
+      `Added ${item.product.name} to cart. Total items in cart: ${currentCart.items.length}`)
   }
 
   removeFromCart(item: CartItem, removeEntirely: boolean = false): void {
@@ -44,6 +46,8 @@ export class CartService {
         currentCart.items.splice(existingItemIndex, 1);
       }
       this.recalculateCart();
+      alert(
+        `Removed ${item.product.name} from cart. Total items in cart: ${currentCart.items.length}`)
       return;
     }
     const currentCart = this.cartSubject.value;
@@ -54,12 +58,16 @@ export class CartService {
     if (currentCart.items[existingItemIndex].quantity <= 1) {
       currentCart.items.splice(existingItemIndex, 1);
       this.recalculateCart();
+      alert(
+        `Removed ${item.product.name} from cart. Total items in cart: ${currentCart.items.length}`)
       return;
     }
     if (existingItemIndex > -1 && currentCart.items[existingItemIndex].quantity > 1) {
       currentCart.items[existingItemIndex].quantity -= 1;
     }
     this.recalculateCart();
+    alert(
+      `Removed ${item.product.name} from cart. Total items in cart: ${currentCart.items.length}`)
   }
 
   recalculateCart(): void {
@@ -76,6 +84,16 @@ export class CartService {
       subtotal,
       shippingCost,
       total,
+    });
+  }
+
+  clearCart(): void {
+    this.cartSubject.next({
+      items: [],
+      userId: 'placeholder',
+      subtotal: 0,
+      shippingCost: 0,
+      total: 0,
     });
   }
 }

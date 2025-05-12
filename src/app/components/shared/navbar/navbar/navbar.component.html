@@ -21,7 +21,7 @@
             <div class="navbar-item">
                 <div class="buttons">
                     <div class="cart-container">
-                        <a class="button is-light is-rounded" aria-label="Cart" routerLink="/cart" (click)="onCartClick()">
+                        <a class="button is-light is-rounded" aria-label="Cart" routerLink="/cart" (click)="onCartClick()" [class.cart-animate]="isAnimating">
                             <span class="icon">
                                 <i class="fas fa-shopping-cart"></i>
                             </span>

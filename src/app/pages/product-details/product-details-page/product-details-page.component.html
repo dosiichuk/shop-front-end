@@ -1,0 +1,23 @@
+<div class="product-details-container">
+    <div class="columns is-variable is-8">
+        <div class="column is-half">
+            <figure class="image is-square">
+                <img [src]="product.imageUrl" [alt]="product.name" />
+            </figure>
+        </div>
+        <div class="column is-half">
+            <h1 class="title is-3">{{ product.name }}</h1>
+            <p class="subtitle is-5 has-text-grey">{{ product.category }}</p>
+            <p class="content">{{ product.description }}</p>
+
+            
+
+            <p class="price title is-4 mt-4">$ {{ product.price.toFixed(2) }}</p>
+
+            <div class="buttons mt-5">
+                <button class="button is-primary" (click)="addToCart()">Add to Cart</button>
+                <a class="button is-light" routerLink="/shop">Back to Shop</a>
+            </div>
+        </div>
+    </div>
+</div>

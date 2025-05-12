@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { CartSummaryComponent } from '../../../components/cart/cart-summary/cart-summary/cart-summary.component';
 import { CartService } from '../../../services/cart/cart.service';
@@ -30,7 +31,7 @@ export class CheckoutPageComponent implements OnInit {
     postalCode: '',
   };
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService, private router: Router) {
     
   }
 
@@ -41,8 +42,7 @@ export class CheckoutPageComponent implements OnInit {
   );}
 
   onSubmit(checkoutForm: Form) {
-    console.log('User Details:', this.userDetails);
-    console.log('Cart:', this.cart);
+    this.cartService.clearCart();
+    this.router.navigate(['/success']);
   }
-
 }

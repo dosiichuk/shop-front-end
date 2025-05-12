@@ -2,6 +2,7 @@
     border: 1px solid #eaeaea;
     border-radius: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
 }
 
 .card:hover {

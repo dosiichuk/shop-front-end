@@ -10,16 +10,27 @@ import { CartService } from '../../../../services/cart/cart.service';
 })
 export class NavbarComponent {
   cartCount: number = 0;
+  isAnimating: boolean = false;
 
   constructor(private cartService: CartService) {}
 
   ngOnInit() {
     this.cartService.getCartObservable().subscribe((cart) => {
       this.cartCount = cart.items.reduce((acc, item) => acc + item.quantity, 0);
+      if (this.cartCount > 0) {
+        this.triggerCartAnimation();
+      }
     });
   }
 
   onCartClick() {
     console.log('Cart clicked!');
+  }
+
+  triggerCartAnimation(): void {
+    this.isAnimating = true;
+    setTimeout(() => {
+      this.isAnimating = false;
+    }, 500);
   }
 }

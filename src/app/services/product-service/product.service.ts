@@ -14,4 +14,8 @@ export class ProductService {
   loadProducts(): Observable<Product[]> {
     return this.HttpClient.get<Product[]>(environment.apiUrl + '/products');
   }
+
+  loadProduct(id: number): Observable<Product> {
+    return this.HttpClient.get<Product>(environment.apiUrl + '/products/' + id);
+  }
 }

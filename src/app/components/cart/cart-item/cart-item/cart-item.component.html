@@ -2,20 +2,17 @@
     <div class="card cart-item-card">
         <div class="card-content">
             <div class="media">
-                <!-- Product Image -->
                 <div class="media-left">
                     <figure class="image is-96x96">
                         <img [src]="cartItem!.product.imageUrl" [alt]="cartItem!.product.name">
                     </figure>
                 </div>
-                <!-- Product Details -->
                 <div class="media-content">
                     <p class="title is-5">{{ cartItem!.product.name }}</p>
                     <p class="subtitle is-6">{{ cartItem!.product.category }}</p>
                     <p class="content">{{ cartItem!.product.description }}</p>
                     <p><strong>Price:</strong> ${{ cartItem!.product.price }}</p>
                 </div>
-                <!-- Quantity Counter and Remove Icon -->
                 <div class="media-right">
                     <div class="quantity-controls">
                         <button class="button is-small is-light" (click)="decreaseQuantity()">-</button>

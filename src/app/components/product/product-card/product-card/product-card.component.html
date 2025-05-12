@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" routerLink="/product/{{ product.id }}" [routerLinkActive]="['is-active']">
     <div class="card-image">
       <figure class="image is-4by3">
         <img
@@ -12,7 +12,7 @@
         <div class="media-left">
           <figure class="image is-48x48">
             <img
-              src="{{ product.category | categoryImage }}"
+              src="{{ product.category | categoryImage | async }}"
               alt="Category Icon"
             />
           </figure>
@@ -25,7 +25,7 @@
   
       <div class="content">
         <p><strong>Price:</strong> ${{ product.price }}</p>
-        <button class="button is-primary is-fullwidth mt-3" (click)="addToCart()">Add to Cart</button>
+        <button class="button is-primary is-fullwidth mt-3" (click)="addToCart($event)">Add to Cart</button>
       </div>
     </div>
   </div>

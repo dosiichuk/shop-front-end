@@ -1,59 +1,36 @@
-# AngularApp2
+# Angular Shop Application
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+This is a front-end application for an online shop built with Angular. The application allows users to browse products, view product details, add items to the cart, and complete orders. The project uses a JSON server to simulate a backend API for managing product and cart data.
 
-## Development server
+## Development Server
 
-To start a local development server, run:
+To start the development server, follow these steps:
 
-```bash
-ng serve
-```
+1. **Start the JSON Server**:
+   The application relies on a JSON server to simulate backend data. Start the JSON server by running:
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+   ```bash
+   npm run json-server
+   ```
 
-## Code scaffolding
+   This will start the JSON server at `http://localhost:3000/`.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+2. **Start the Angular Application**:
+   In a separate terminal, start the Angular development server by running:
 
-```bash
-ng generate component component-name
-```
+   ```bash
+   ng serve
+   ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+   Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
 
-```bash
-ng generate --help
-```
+---
 
-## Building
+## JSON Server
 
-To build the project run:
+The JSON server is used to simulate backend data for the shop. It provides endpoints for products, categories, and cart data. The server runs on `http://localhost:3000/`.
 
-```bash
-ng build
-```
+To modify the data, edit the `db.json` file located in the root of the project.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
