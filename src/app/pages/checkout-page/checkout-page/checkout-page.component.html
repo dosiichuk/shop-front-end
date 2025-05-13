@@ -11,7 +11,6 @@
         </div>
         <!-- User Details Form -->
         <div *ngIf="cart.items.length > 0" class="column full-width">
-
             <div class="column">
                 <div class="box">
                     <h2 class="title is-4">Shipping Details</h2>
@@ -21,7 +20,7 @@
                             <label class="label">Full Name</label>
                             <div class="control">
                                 <input class="input" type="text" name="fullName" placeholder="Enter your full name"
-                                    [(ngModel)]="userDetails.fullName" #fullName="ngModel" required />
+                                    [(ngModel)]="userDetails.fullName" (ngModelChange)="onFullNameChange($event)" #fullName="ngModel" required />
                             </div>
                             <p class="help is-danger" *ngIf="fullName.invalid && fullName.touched">
                                 Full name is required.
@@ -33,7 +32,7 @@
                             <label class="label">Address</label>
                             <div class="control">
                                 <input class="input" type="text" name="address" placeholder="Enter your address"
-                                    [(ngModel)]="userDetails.address" #address="ngModel" required />
+                                    [(ngModel)]="userDetails.address" #address="ngModel" (ngModelChange)="onAddressChange($event)" required />
                             </div>
                             <p class="help is-danger" *ngIf="address.invalid && address.touched">
                                 Address is required.
@@ -45,7 +44,7 @@
                             <label class="label">City</label>
                             <div class="control">
                                 <input class="input" type="text" name="city" placeholder="Enter your city"
-                                    [(ngModel)]="userDetails.city" #city="ngModel" required />
+                                    [(ngModel)]="userDetails.city" (ngModelChange)="onCityChange($event)" #city="ngModel" required />
                             </div>
                             <p class="help is-danger" *ngIf="city.invalid && city.touched">
                                 City is required.
@@ -57,7 +56,7 @@
                             <label class="label">Postal Code</label>
                             <div class="control">
                                 <input class="input" type="text" name="postalCode" placeholder="Enter your postal code"
-                                    [(ngModel)]="userDetails.postalCode" #postalCode="ngModel" required
+                                    [(ngModel)]="userDetails.postalCode" (ngModelChange)="onPostalCodeChange($event)" #postalCode="ngModel" required
                                     pattern="^[0-9]{5}$" />
                             </div>
                             <p class="help is-danger" *ngIf="postalCode.invalid && postalCode.touched">

@@ -4,6 +4,7 @@ import { ProductCardComponent } from '../../components/product/product-card/prod
 import { ProductService } from '../../services/product-service/product.service';
 import { Product } from '../../types';
 import { CommonModule } from '@angular/common';
+import confetti from 'canvas-confetti';
 
 @Component({
   selector: 'app-product-list-page',
@@ -19,4 +20,15 @@ export class ProductListPageComponent {
     this.products$ = this.productService.loadProducts();
   }
 
+  provideUIFeedbackToProductBeingAdded(product: Product) {
+    this.launchConfetti();
+  }
+
+  launchConfetti(): void {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 },
+    });
+  }
 }

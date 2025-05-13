@@ -45,4 +45,24 @@ export class CheckoutPageComponent implements OnInit {
     this.cartService.clearCart();
     this.router.navigate(['/success']);
   }
+
+  onFullNameChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.userDetails.fullName = input.value;
+  }
+
+  onAddressChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.userDetails.address = input.value;
+  }
+
+  onCityChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.userDetails.city = input.value;
+  }
+
+  onPostalCodeChange(event: Event) {
+    const input = event.target as HTMLInputElement;
+    this.userDetails.postalCode = input.value;
+  }
 }

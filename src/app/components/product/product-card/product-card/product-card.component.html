@@ -1,4 +1,4 @@
-<div class="card" routerLink="/product/{{ product.id }}" [routerLinkActive]="['is-active']">
+<div class="card" [class.product-being-added]="productBeingAdded"  routerLink="/product/{{ product.id }}" [routerLinkActive]="['is-active']">
     <div class="card-image">
       <figure class="image is-4by3">
         <img

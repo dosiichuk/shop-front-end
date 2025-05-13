@@ -1,19 +1,35 @@
 .card {
-    border: 1px solid #eaeaea;
-    border-radius: 8px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card-content {
-    text-align: center;
+  text-align: center;
 }
 
 .button {
-    border-radius: 20px;
+  border-radius: 20px;
+}
+
+.product-being-added > div {
+  animation: pulse 2s ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
